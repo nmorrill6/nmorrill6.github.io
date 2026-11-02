@@ -6,6 +6,17 @@
   <meta name="description" content="Nate Morrill — computer vision research and publications.">
   <title>Nate Morrill</title>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Start at the top of the base page when the browser refreshes it.
+    if (performance.getEntriesByType('navigation')[0]?.type === 'reload') {
+      history.replaceState(history.state, '', location.pathname);
+      history.scrollRestoration = 'manual';
+      window.addEventListener('load', () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        history.scrollRestoration = 'auto';
+      }, { once: true });
+    }
+  </script>
 </head>
 <body>
   <div class="page">
